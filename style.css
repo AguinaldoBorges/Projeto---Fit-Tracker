@@ -1,0 +1,268 @@
+/* variaveis */
+:root {
+    --cor-primaria: #d8cb0f;
+    --cor-primaria-transpatente: #d8cb0f1c;
+    --cor-secundaria: #252525;
+    --cor-terciaria: #ffffff;
+    --cor-terciaria-transapatente: #ffffffec;
+    --cor-layout: #a1a1a1;
+    --cor-sessao-clara: #f5f5f5;
+    --cor-sessao-escura: #b9b7b7;
+}
+
+
+/* Estilização */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    margin: 3px;
+    background: var(--cor-terciaria);
+
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    display: flex;
+    margin: 3px;
+    background: var(--cor-layout);
+}
+
+header {
+    min-height: 300px;
+    background: url('./img/banner-desktop.jpg') no-repeat;
+    background-size: cover;
+    background-color: var(--cor-primaria);
+    background-blend-mode: overlay;
+}
+
+header h1 {
+    position: inherit;
+    font-size: 35px;
+
+}
+
+header strong {
+    color: var(--cor-terciaria);
+    font-weight: 600;
+    text-shadow: var(--cor-secundaria) 1px 1px 5px;
+    font-size: 110px;
+}
+
+header #esquerda #button {
+    margin-top: 33.33%;
+}
+
+
+/* Sessao 1 - descrição */
+main #descricao {
+    background: var(--cor-sessao-escura);
+
+}
+
+main #descricao img {
+    width: 100%;
+}
+
+
+/* Sessao 2 - recursos */
+main #recursos {
+    background: var(--cor-sessao-clara);
+}
+
+main #recursos .card {
+    text-align: center;
+    min-height: 340px;
+    position: relative;
+    background: var(--cor-terciaria-transapatente);
+    top: -120px;
+}
+
+main #recursos img {
+    height: 100px;
+    padding-top: 35px;
+}
+
+main #recursos #button {
+    position: relative;
+    top: -60px;
+}
+
+
+/* sessão 3 - CTA */
+main #cta {
+    min-height: 100vh;
+    background: url('./img/sessao-3.jpg') no-repeat;
+    background-size: cover;
+    background-color: var(--cor-primaria);
+    background-blend-mode: overlay;
+
+}
+
+main #cta p {
+    font-size: 45px;
+    font-weight: 600;
+    padding: 55px 25px;
+    padding-bottom: 25px;
+}
+
+main #cta #button {
+    margin-left: 25px;
+}
+
+main #depoimentos {
+    padding: 55px;
+}
+
+main #depoimentos blockquote {
+    min-height: 380px;
+    margin-top: 70px;
+    padding: 25% 55px;
+    background-color: var(--cor-primaria-transpatente);
+    border: solid 1px var(--cor-sessao-escura);
+    border-radius: 5px;
+}
+
+/* footer */
+footer h4 {
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+footer .form-group {
+    margin: 20px;
+}
+
+footer img {
+    width: 80%;
+    opacity: 0.8;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+
+footer #footer-button {
+    display: flex;
+    justify-content: center;
+}
+
+/* classes gerais */
+.botao {
+    margin: 20px;
+    min-width: 250px;
+    height: 50px;
+    animation: highlight 1s ease-in-out infinite;
+}
+
+/* Media - responsivo */
+@media only screen and (max-width: 912px) {
+    main #recursos .card {
+        top: 0px;
+    }
+
+    main #recursos #button {
+        position: relative;
+        top: 0px;
+        margin: 45px 0;
+    }
+
+    header {
+        min-height: 100vh;
+        text-align: center;
+    }
+
+
+    header h1 {
+        font-size: 25px;
+        margin: 50px 0;
+    }
+
+    header #esquerda #button {
+        display: block;
+    }
+
+    header #direita {
+        display: none;
+    }
+
+    header #direita,
+    header #direita #button {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 717px) {
+    * {
+        text-align: center;
+    }
+
+    header {
+        min-height: 100vh;
+        text-align: center;
+    }
+
+
+    header h1 {
+        font-size: 25px;
+        margin: 50px 0;
+    }
+
+    header #esquerda #button {
+        display: block;
+    }
+
+    header #direita,
+    header #direita #button {
+        display: none;
+    }
+
+    main #recursos .card {
+        top: 0px;
+    }
+
+    main #recursos #button {
+        position: relative;
+        top: 0px;
+        margin: 45px 0;
+    }
+
+    /* mobile CTA */
+    main #cta {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    main #cta p {
+        font-size: 25px;
+    }
+
+    main #cta #cta-button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* animações */
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
